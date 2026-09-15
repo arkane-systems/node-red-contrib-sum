@@ -1,4 +1,4 @@
-<script type="text/x-red" data-template-name="sum">
+<script type="text/html" data-template-name="sum">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -9,7 +9,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="average">
+<script type="text/html" data-help-name="sum">
     <p>Calculate the sum of incoming <code>msg.payload</code> values from across a number of different <code>msg.topic</code>.</p>
     <p>Incoming <code>msg.topic</code> has to be used to separate and identify values.
     Messages not containing a valid numeric value will be rejected.</p>

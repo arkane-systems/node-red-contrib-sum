@@ -33,5 +33,3 @@ npm install <path-to-this-repo>
 - Valid numeric input is stored per `msg.topic` (via `.toString()`), and `msg.payload` is replaced with the sum across all stored topics before the message is forwarded.
 - If the node's `topic` config field is set, it overwrites `msg.topic` on output.
 - All other message properties pass through unchanged.
-
-Note: `sum.html`'s help block currently has `data-help-name="average"` (a leftover from the upstream average node this was forked from) instead of `"sum"` — be aware of this mismatch if editing the help text.
