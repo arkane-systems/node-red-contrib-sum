@@ -19,8 +19,12 @@
     "sum"
   ],
   "node-red": {
+    "version": ">=1.0.0",
     "nodes": {
       "sum": "sum.js"
     }
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
