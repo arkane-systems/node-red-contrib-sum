@@ -1,0 +1,164 @@
+[
+    {
+        "id": "sum-example-tab",
+        "type": "tab",
+        "label": "Sum by topic",
+        "disabled": false,
+        "info": "Demonstrates the sum node accumulating values per msg.topic, updating an existing topic's value, and resetting via msg.reset.\n\nClick the inject buttons from top to bottom and watch the debug sidebar: the total after \"Topic A = 5\" is 5, after \"Topic B = 10\" is 15, after \"Topic A = 7\" (which replaces the earlier 5) is 17, and after \"Reset\" it drops back to 0.",
+        "env": []
+    },
+    {
+        "id": "sum-example-comment",
+        "type": "comment",
+        "z": "sum-example-tab",
+        "name": "sum: accumulate per-topic, then reset",
+        "info": "",
+        "x": 210,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "sum-example-inject-a5",
+        "type": "inject",
+        "z": "sum-example-tab",
+        "name": "Topic A = 5",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "A",
+        "payload": "5",
+        "payloadType": "num",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "sum-example-node"
+            ]
+        ]
+    },
+    {
+        "id": "sum-example-inject-b10",
+        "type": "inject",
+        "z": "sum-example-tab",
+        "name": "Topic B = 10",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "B",
+        "payload": "10",
+        "payloadType": "num",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "sum-example-node"
+            ]
+        ]
+    },
+    {
+        "id": "sum-example-inject-a7",
+        "type": "inject",
+        "z": "sum-example-tab",
+        "name": "Topic A = 7",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "A",
+        "payload": "7",
+        "payloadType": "num",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "sum-example-node"
+            ]
+        ]
+    },
+    {
+        "id": "sum-example-inject-reset",
+        "type": "inject",
+        "z": "sum-example-tab",
+        "name": "Reset",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "reset",
+                "v": "true",
+                "vt": "bool"
+            }
+        ],
+        "repeat": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "sum-example-node"
+            ]
+        ]
+    },
+    {
+        "id": "sum-example-node",
+        "type": "sum",
+        "z": "sum-example-tab",
+        "name": "",
+        "topic": "",
+        "x": 390,
+        "y": 190,
+        "wires": [
+            [
+                "sum-example-debug"
+            ]
+        ]
+    },
+    {
+        "id": "sum-example-debug",
+        "type": "debug",
+        "z": "sum-example-tab",
+        "name": "running total",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 190,
+        "wires": []
+    }
+]
